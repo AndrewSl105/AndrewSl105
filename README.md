@@ -1,6 +1,6 @@
 ## Andrii Slipchenko
 
-Full-stack engineer building production AI systems. 6+ years on Ruby on Rails, now on TypeScript / NestJS. I design schemas like systems have to live for five years, not five months — auditability, idempotency, tenant isolation, and webhook safety on day one, not v2.
+Full-stack engineer building production AI systems. 6+ years on React, TypeScript / NestJS / Rails(2.5 years). I design schemas like systems have to live for five years, not five months — auditability, idempotency, tenant isolation, and webhook safety on day one, not v2.
 
 Based in Kyiv 🇺🇦. Open to **mid to senior**, full-time or contract.
 
