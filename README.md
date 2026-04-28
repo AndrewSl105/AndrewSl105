@@ -1,48 +1,34 @@
 ## Andrii Slipchenko
 
-Full-stack engineer building production AI systems. 6+ years on Ruby on Rails, now on TypeScript / NestJS. I design schemas like systems have to live for five years, not five months — auditability, idempotency, tenant isolation, and webhook safety on day one, not v2.
+Full-stack product engineer. 6+ years shipping production features across the stack — strong on the frontend (React, Angular, Next.js), comfortable on the backend (NestJS, Rails, Prisma, PostgreSQL). I think about products end-to-end: UI, API shape, data model, and where the failure modes are.
 
-Based in Kyiv 🇺🇦. Open to **mid to seniour engineering roles**, full-time or contract.
+Based in Kyiv 🇺🇦. Open to **mid / senior full-stack roles**, full-time or contract.
 
 ---
 
-### What I build well
+### How I work
 
-**Multi-tenant systems with real isolation.** Global vs tenant-scoped content layers, audience filtering by domain / region / plan tier / allowlist, fork-with-lineage instead of copy-on-write. Tenant boundaries enforced at query time, not as an afterthought.
+I take features from "we need this" to shipped — designing the data model, writing the migration, building the API, wiring the UI, fixing the bug wherever it actually lives. I'm not a specialist who throws problems over the wall; I follow them.
 
-**LLM systems treated as production dependencies.** RAG over pgvector, provider-agnostic SDK layers (OpenAI / Anthropic) bounded by `provider × model × dim` instead of free-form JSON. Every prompt + response captured for replay. Tokens, latency, cost, and tool-call rounds flow through the same observability path as the rest of the stack.
+On my own products I make the architecture decisions — multi-tenancy, billing flow, auth strategy, where to put the boundaries — and I lean heavily on AI tooling for implementation. That split lets me move much faster than I could alone, but the product-level thinking and the *why* behind every choice is mine. I can read a system, spot the problem ("this webhook will double-charge on retry," "this query is going to fan out badly"), and own the fix.
 
-**Block-based / pipeline architectures.** Composable units (analysis blocks, scraper steps, draft → translate → review → apply pipelines) with progressive hydration, dependency-aware short-circuit, per-unit retry with backoff, and immutable layout snapshots so historical output survives template edits.
+### What I've worked on
 
-**Idempotency that actually holds.** SHA-256 idempotency keys with dedup windows. Unique constraints on `(subscription, period, reason)` so a webhook retry can't double-grant credits. The kind of bug you only fix after it bites you in production — designed in upfront.
+**[Radar Verdict](https://radarverdict.com)** — multi-tenant B2B SaaS for compliance and supplier risk. My main current project. Owned end-to-end: data model, multi-tenancy with global vs team-scoped resources, RAG layer over pgvector, billing through Paddle, analysis pipeline with composable blocks. This is where I got serious about thinking through idempotency, audit trails, and tenant isolation before the first incident, not after.
 
-**Tamper-evident audit trails.** Hash-chained event logs (`prevHash → hash`), per-entity deltas with significance scoring, soft-delete + audit log on every mutable entity, optimistic concurrency via `version` columns.
+**Consumer media platform (separate project)** — Telegram-first auth with cross-device login, Telegram Stars billing, custom scraper / agent infrastructure, social features with per-feature privacy scopes. The sandbox for consumer-side concerns: engagement signals, guest-to-user conversion, conversational AI with intent classification.
 
-**Real billing surfaces.** Paddle (B2B SaaS) and Telegram Stars (consumer) lifecycles end-to-end: plan catalogs with snapshots at assignment time so historical state survives catalog edits, credit buckets, trials, scheduled plan changes, refunds. Invoice payload uniqueness, charge IDs tracked from both provider sides.
-
-**Auth + session models for messy real-world flows.** Provider-agnostic sessions (web / Telegram / guest), cross-device login challenges (QR-style approve-from-phone), guest-to-user conversion that preserves history, refresh + access token hashes with separate expiries.
-
-**Engagement signals that don't lie.** Watch sessions split into `activeSeconds` / `pageVisibleSeconds` / `tabFocusedSeconds` as separate counters — distinguishing "tab in background" from "tab focused but idle" from "user actually interacting." The distinction you wish you'd made before launching, not after.
-
-**Privacy as a first-class scope.** Per-feature visibility (history / activity / reactions / profile) with PRIVATE / FRIENDS / PUBLIC evaluated at query time, not bolted on. GDPR-mature data modeling.
-
-**Custom agent / scraper infrastructure.** Parent-child run trees with discovered-link state machines, depth-limited crawling, dedupe at multiple levels, configurable selectors and field mappings per scope without code changes.
+**6+ years on Rails teams.** Frontend-leaning full-stack work — features that touched UI, controllers, models, migrations, and tests. The kind of role where you're expected to follow a bug wherever it lives, not hand it off.
 
 ### Stack
 
-- **Backend** — TypeScript · NestJS · Prisma · PostgreSQL + pgvector · Better Auth · OpenAI / Anthropic SDKs · Paddle · Telegram Bot API · Playwright · Cloudflare R2
-- **Frontend** — Next.js · React · Tailwind · Angular (legacy)
-- **Previous** — Ruby on Rails (6+ years on production systems)
+- **Frontend** — React · Next.js · Angular · TypeScript · Tailwind
+- **Backend** — NestJS · Prisma · PostgreSQL (+ pgvector) · Ruby on Rails
+- **AI / integrations** — OpenAI / Anthropic SDKs · RAG patterns · Paddle · Telegram Bot API · Playwright
 
-### How I work
+### What I'm looking for
 
-I prefer narrow, well-typed contracts over flexible JSON. When flexibility is required — block configs, embedding vectors, plan limits, scraper selectors — it's bounded by a schema, not free-form.
-
-I write migrations like they're permanent. I add the unique constraint before the bug, not after. I assume webhooks will retry, jobs will run twice, and clients will replay requests — and design accordingly.
-
-### Where this shows up
-
-Most of the patterns above come from **[Radar Verdict](https://radarverdict.com)** — a multi-tenant B2B SaaS for compliance and supplier risk, currently my main focus. Consumer-side patterns (Telegram auth, Stars billing, agent infra, watch-session signals) come from a separate platform.
+A team where I can own product features end-to-end, work on real problems (not just tickets), and keep going deeper on the backend and systems side. AI-heavy products, B2B SaaS, or anything with interesting data modeling are the sweet spot.
 
 ### Reach me
 
