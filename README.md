@@ -2,7 +2,7 @@
 
 Full-stack engineer building production AI systems. 6+ years on Ruby on Rails, now on TypeScript / NestJS. I design schemas like systems have to live for five years, not five months — auditability, idempotency, tenant isolation, and webhook safety on day one, not v2.
 
-Based in Kyiv 🇺🇦. Open to **senior / staff engineering roles**, full-time or contract.
+Based in Kyiv 🇺🇦. Open to **mid to seniour engineering roles**, full-time or contract.
 
 ---
 
