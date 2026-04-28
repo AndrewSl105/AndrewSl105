@@ -1,16 +1,21 @@
-## Hi there 👋
+### Hi, I'm Andrii 👋
 
-<!--
-**AndrewSl105/AndrewSl105** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I'm a Full-Stack Engineer building **RAG and LLM systems for compliance, import, and decision workflows** — tools that help midmarket brands catch supplier and product risks before they cost money.
 
-Here are some ideas to get you started:
+Right now I'm researching how importers and procurement teams evaluate products, validate suppliers, and decide what's worth testing — and where things go wrong.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+#### 🛠 Stack
+
+- **Backend:** TypeScript · NestJS · Prisma · Ruby on Rails (6+ years)
+- **Frontend:** React · Angular
+- **Data & AI:** PostgreSQL · pgvector · OpenAI / Anthropic SDKs · LLM Ops
+- **Infra:** designing production-grade systems end-to-end
+
+#### 💼 Open to
+
+Senior engineering roles — **full-time or contract** — in AI-heavy B2B SaaS teams. Remote-friendly.
+
+#### 📫 Reach me
+
+- LinkedIn: [andrii-s-284690117](https://www.linkedin.com/in/andrii-s-284690117/)
+- Based in Kyiv, Ukraine 🇺🇦
