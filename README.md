@@ -1,36 +1,55 @@
 ## Andrii Slipchenko
 
-Full-stack product engineer. 6+ years shipping production features across the stack — strong on the frontend (React, Angular, Next.js), comfortable on the backend (NestJS, Rails, Prisma, PostgreSQL). I think about products end-to-end: UI, API shape, data model, and where the failure modes are.
+**Product engineer.** Full-stack, system design, agentic development.
 
-Based in Kyiv 🇺🇦. Open to **mid / senior full-stack roles**, full-time or contract.
+I've spent seven years taking web products from zero to one: scoping the first version, designing the system, writing both sides, and reading the analytics after release. Today AI agents write most of my code. They work inside the specs, contracts and test gates I set up, and I build the orchestrators that run them.
+
+Kyiv, Ukraine · remote · open to senior product, full-stack and AI engineering roles, full-time or contract.
+
+[andrii.tech](https://andrii.tech) · [LinkedIn](https://www.linkedin.com/in/andrii-s-284690117/) · a.slipchenko@pm.me
 
 ---
 
-### How I work
+### What I'm building
 
-I take features from "we need this" to shipped — designing the data model, writing the migration, building the API, wiring the UI, fixing the bug wherever it actually lives. I'm not a specialist who throws problems over the wall; I follow them.
+**[FleetPocket](https://github.com/AndrewSl105/fleetpocket)** is a self-hosted orchestrator that runs Claude Code and Codex against your GitHub repositories from your phone.
+- You describe a change in Telegram. The agent works in an isolated container with no credentials, and you get a pull request back.
+- It is written in Go and TypeScript and is restart-safe, with an OpenAPI contract enforced in CI.
+- Eight of its merged pull requests were opened by its own agent.
 
-On my own products I make the architecture decisions — multi-tenancy, billing flow, auth strategy, where to put the boundaries — and I lean heavily on AI tooling for implementation. That split lets me move much faster than I could alone, but the product-level thinking and the *why* behind every choice is mine. I can read a system, spot the problem ("this webhook will double-charge on retry," "this query is going to fan out badly"), and own the fix.
+**[Radar Verdict](https://radarverdict.com)** is B2B pre-purchase intelligence for importers and sourcing teams.
+- Paste a product link and get a risk verdict a compliance team can defend.
+- It is built on immutable evidence snapshots, a pipeline of composable analysis blocks, RAG over pgvector, and credit billing on an append-only ledger.
 
-### What I've worked on
+**[Vatary Desk](https://vatarydesk.com)** is one workspace for pages, tables, boards, files and diagrams, with an AI that works on them.
+- Five services in TypeScript, Go and Python, connected by protobuf contracts.
+- A Go gateway for every model call, with fallbacks and per-call cost.
+- 1,178 test files.
 
-**[Radar Verdict](https://radarverdict.com)** — multi-tenant B2B SaaS for compliance and supplier risk. My main current project. Owned end-to-end: data model, multi-tenancy with global vs team-scoped resources, RAG layer over pgvector, billing through Paddle, analysis pipeline with composable blocks. This is where I got serious about thinking through idempotency, audit trails, and tenant isolation before the first incident, not after.
+### How I ship with agents
 
-**Consumer media platform (separate project)** — Telegram-first auth with cross-device login, Telegram Stars billing, custom scraper / agent infrastructure, social features with per-feature privacy scopes. The sandbox for consumer-side concerns: engagement signals, guest-to-user conversion, conversational AI with intent classification.
+```
+spec → decompose along contracts → isolated agents → tests and CI gates → small reviewed PRs → metrics
+                                                                                                 ↓
+                                                                                  what I learn feeds the next spec
+```
 
-**6+ years on Rails teams.** Frontend-leaning full-stack work — features that touched UI, controllers, models, migrations, and tests. The kind of role where you're expected to follow a bug wherever it lives, not hand it off.
+I own the spec, the decomposition and the checks. Agents do the typing.
+
+### Experience
+
+| | |
+|---|---|
+| **Radar Verdict** · Product engineer | Dec 2025 – now |
+| **Vatary Desk** · Founder | now |
+| **Raccoon Gang** · Software engineer | Aug 2023 – Dec 2025 |
+| **Aimprosoft** · Software engineer | Nov 2019 – Aug 2023 |
+
+At Raccoon Gang I rewrote a legacy database schema and shipped a zero-downtime migration that cut feature development cost about 4×. At Aimprosoft I shipped a Slack-style real-time chat product.
 
 ### Stack
 
-- **Frontend** — React · Next.js · Angular · TypeScript · Tailwind
-- **Backend** — NestJS · Prisma · PostgreSQL (+ pgvector) · Ruby on Rails
-- **AI / integrations** — OpenAI / Anthropic SDKs · RAG patterns · Paddle · Telegram Bot API · Playwright
-
-### What I'm looking for
-
-A team where I can own product features end-to-end, work on real problems (not just tickets), and keep going deeper on the backend and systems side. AI-heavy products, B2B SaaS, or anything with interesting data modeling are the sweet spot.
-
-### Reach me
-
-- LinkedIn — [andrii-s-284690117](https://www.linkedin.com/in/andrii-s-284690117/)
-- Radar — [radarverdict.com](https://radarverdict.com)
+- **Core:** TypeScript · React · Node / NestJS · PostgreSQL
+- **Regular:** Go · Next.js · Prisma · Docker · Python
+- **Earlier work:** Ruby on Rails · Angular
+- **AI and agents:** Claude Code · Claude Agent SDK · Codex · MCP · OpenAI / Anthropic SDKs · RAG (pgvector)
