@@ -13,7 +13,7 @@ I build web products end to end, and ship them with AI agents that work inside t
 
 **[Radar Verdict](https://radarverdict.com)** — pre-purchase risk verdicts for importers.<br>
 **[Vatary Desk](https://vatarydesk.com)** — document-first workspace with AI.<br>
-**[FleetPocket](https://github.com/AndrewSl105/fleetpocket)** — self-hosted orchestrator for coding agents, driven from Telegram.
+**[Jungle Monkey](https://github.com/AndrewSl105/fleetpocket)** — self-hosted orchestrator for coding agents, driven from Telegram.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AndrewSl105/AndrewSl105/cards/activity-dark.svg">
