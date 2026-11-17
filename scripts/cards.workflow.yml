@@ -1,0 +1,44 @@
+# Move to .github/workflows/cards.yml (and delete .github/workflows/cool-readme.yml).
+name: cards
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cards
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Render cards
+        run: node scripts/cards.mjs "$RUNNER_TEMP/cards"
+        env:
+          GITHUB_TOKEN: ${{ secrets.CARDS_TOKEN }}
+
+      - name: Publish to the cards branch
+        run: |
+          export GIT_INDEX_FILE="$RUNNER_TEMP/cards.index"
+          git --work-tree="$RUNNER_TEMP/cards" add -A
+          tree=$(git write-tree)
+          if git fetch -q --depth=1 origin cards 2>/dev/null \
+            && [ "$(git rev-parse 'FETCH_HEAD^{tree}')" = "$tree" ]; then
+            echo "Cards unchanged, nothing to push."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          commit=$(git commit-tree "$tree" -m 'Update profile cards')
+          git push -f origin "$commit:refs/heads/cards"
