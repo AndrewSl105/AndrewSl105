@@ -76,4 +76,20 @@ At Raccoon Gang I rewrote a legacy database schema and shipped a zero-downtime m
   <img src="https://raw.githubusercontent.com/AndrewSl105/AndrewSl105/cards/weekly-light.svg" width="400" alt="Weekly rhythm">
 </picture>
 </p>
+<p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AndrewSl105/AndrewSl105/cards/about-dark.svg">
+  <img src="https://raw.githubusercontent.com/AndrewSl105/AndrewSl105/cards/about-light.svg" width="400" alt="About">
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AndrewSl105/AndrewSl105/cards/repos-dark.svg">
+  <img src="https://raw.githubusercontent.com/AndrewSl105/AndrewSl105/cards/repos-light.svg" width="400" alt="Top repos">
+</picture>
+</p>
+<p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AndrewSl105/AndrewSl105/cards/streaks-dark.svg">
+  <img src="https://raw.githubusercontent.com/AndrewSl105/AndrewSl105/cards/streaks-light.svg" width="400" alt="Streaks">
+</picture>
+</p>
 <!-- cool-readme:end -->
