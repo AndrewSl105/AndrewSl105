@@ -1,0 +1,9 @@
+# Settings: https://github.com/pedrocatalao/github-cool-readme#settings
+user: AndrewSl105
+count:
+  private: false
+  orgs: true
+look:
+  style: classic
+  color: github
+  background: none
