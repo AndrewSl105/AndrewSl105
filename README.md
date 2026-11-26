@@ -45,6 +45,6 @@ I own the spec, the decomposition and the checks. Agents do the typing.
 <summary><b>Stack</b></summary>
 
 TypeScript · React · Node / NestJS · PostgreSQL · Go · Next.js · Python · Docker<br>
-Claude Code · Agent SDK · Codex · MCP · RAG (pgvector)
+Claude Code · Agent SDK · Codex · MCP · RAG (pgvector) Ruby
 
 </details>
